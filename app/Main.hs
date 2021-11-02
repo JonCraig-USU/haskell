@@ -3,7 +3,7 @@ module Main where
 
 
 main :: IO ()
-main = print $ (take 10 multiplesOfNumbers 2)
+main = print $ (take 10 (multiplesOfNumbers 2))
 
 -- main :: factorial 5
 -- main = putStrLn "Hello, Haskell!"
@@ -12,17 +12,12 @@ factorial 0 = 1
 factorial n = n * factorial (n - 1)
 
 
-oddNumbers :: Int -> [Int]
-oddNumbers n = [ x | x <- [1..n], (mod x 1) == 0]
-
-
 -- Counting Numbers
-countingNumbers = 1 : [ x | x <- [2..]]
+countingNumbers = [1..] 
 
 
 -- multiplesOfNumbers
-multiplesOfNumbers :: Int -> Int -> [Int] 
-multiplesOfNumbers n = [n..] 
+multiplesOfNumbers n = map (* n) [1..] 
 
 
 -- -- woodallNumbers
